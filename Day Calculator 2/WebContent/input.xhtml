@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+ 
+ <f:view>     
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Day Calculator Input</title>
+    </h:head>
+    
+    <h:body>
+        <h1>Day Calculator Input</h1>
+        <h2>Today Date:</h2>
+        <h:outputText value="#{controllerManagedBean.calculator.today}">
+            <f:convertDateTime pattern="YYYY-MM-dd"/>
+        </h:outputText>
+         or 
+        <h:outputText value="#{controllerManagedBean.calculator.today}">
+            <f:convertDateTime pattern="EEEE, MMMM dd, YYYY"/>
+        </h:outputText> 
+        
+        
+        <h:form>
+            <h2>Start Date (YYYY-MM-DD):</h2>
+            <p>
+               <h:inputText id="startdate" value="#{controllerManagedBean.calculator.startDate}" 
+                        converterMessage="Please use format YYYY-DD-MM">
+                    <f:convertDateTime pattern="yyyy-MM-dd"/>               
+               </h:inputText>
+               &nbsp;&nbsp;<h:message for="startdate" showSummary="true" showDetail="false" style="color:red"/>
+            </p>
+            <h2>Number of Days to Add:</h2>
+            <p>
+               <h:inputText value="#{controllerManagedBean.days}" id="days" 
+                           converterMessage="Please enter a number" />
+               &nbsp;&nbsp;<h:message for="days" showSummary="true" showDetail="false" style="color:red"/>
+            </p>
+            
+            <h2>Get the Calculated Date</h2>
+            <p><h:commandButton action="#{controllerManagedBean.calculateDay}" value="Calculate"/></p>
+        </h:form>
+    </h:body>
+</f:view>
+</html>

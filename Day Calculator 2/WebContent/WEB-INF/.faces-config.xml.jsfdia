@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#input.xhtml" PATH="/input.xhtml"
+  SHAPE="75,86,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#input.xhtml:0" NAME="item"
+   PATH="/input.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success:#{controllerManagedBean.calculateDay}:#result.xhtml"
+    NAME="output" PATH="/result.xhtml" TARGET="rules:#result.xhtml"
+    TITLE="#{controllerManagedBean.calculateDay}:success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#result.xhtml" PATH="/result.xhtml"
+  SHAPE="408,88,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+</PROCESS>

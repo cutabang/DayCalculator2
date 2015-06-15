@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:view>     
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Day Calculator Result</title>
+    </h:head>
+    <body>
+        <h1>Day Calculator Result</h1>
+        
+        <h2>Today Date:</h2>
+        <h:outputText value="#{flash.controllerManagedBean.calculator.today}">
+            <f:convertDateTime pattern="YYYY-MM-dd"/>
+        </h:outputText>
+         or 
+        <h:outputText value="#{flash.controllerManagedBean.calculator.today}">
+            <f:convertDateTime pattern="EEEE, MMMM dd, YYYY"/>
+        </h:outputText>
+        
+        <h2>Start Date:</h2>
+        <h:outputText value="#{flash.controllerManagedBean.calculator.startDate}">
+            <f:convertDateTime pattern="YYYY-MM-dd"/>
+        </h:outputText>
+         or 
+        <h:outputText value="#{flash.controllerManagedBean.calculator.startDate}">
+            <f:convertDateTime pattern="EEEE, MMMM dd, YYYY"/>
+        </h:outputText>
+        
+        <h2>Days Added:</h2>
+        <h:outputText value="#{flash.controllerManagedBean.days}"/>
+        
+        <h2>Result Date</h2>
+        <h:outputText value="#{flash.controllerManagedBean.calculator.resultDate}">
+            <f:convertDateTime pattern="YYYY-MM-dd"/>
+        </h:outputText>
+         or 
+        <h:outputText value="#{flash.controllerManagedBean.calculator.resultDate}">
+            <f:convertDateTime pattern="EEEE, MMMM dd, YYYY"/>
+        </h:outputText>
+        <p><a href=".">Back to the Calculator</a></p>
+    </body>
+</f:view>
+</html>
+ 
